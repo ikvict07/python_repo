@@ -11,6 +11,7 @@ class Scrapper:
     def __init__(self):
         self.driver = None
         self.options = None
+        self.configure_options().configure_driver()
 
 
     def configure_options(self):
@@ -46,7 +47,7 @@ class Scrapper:
             print("Required HTML element is not present in the page.")
 
     def find(self, url):
-        self.configure_options().configure_driver().__provide_url(self, url).__find_logic()
+        self.__provide_url(self, url).__find_logic()
 
 
 scrapper = Scrapper()
